@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="inmobiliaria"/>
+  <table-filter match-name="departamento"/>
+  <table-filter match-name="estrato"/>
+  <table-filter match-name="parqueadero"/>
+  <table-filter match-name="tipo_inmueble"/>
+  <table-filter match-name="informacion_principal"/>
+  <table-filter match-name="roles"/>
+  <table-filter match-name="tiempo_construido"/>
+  <table-filter match-name="ciudad"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="numero_banios"/>
+  <table-filter match-name="tipo_operacion"/>
+  <table-filter match-name="identificacion_inmobiliaria"/>
+  <table-filter match-name="genero"/>
+  <table-filter match-name="numero_plantas"/>
+  <table-filter match-name="informacion_principal_has_especificaciones_varias"/>
+  <table-filter match-name="cocina"/>
+  <table-filter match-name="numero_alcobas"/>
+  <table-filter match-name="tipo_propiedad"/>
+  <table-filter match-name="rango_precios"/>
+  <table-filter match-name="rango_precios_ajustado"/>
+  <table-filter match-name="zona"/>
+  <table-filter match-name="condicion"/>
+  <table-filter match-name="opcion"/>
+  <table-filter match-name="especificaciones_varias"/>
+  <table-filter match-name="garaje"/>
+  <table-filter match-name="pais"/>
+  <table-filter match-name="estado"/>
+</hibernate-reverse-engineering>

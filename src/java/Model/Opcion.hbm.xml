@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/03/2015 06:26:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Model.Opcion" table="opcion" catalog="inmobiliaria" optimistic-lock="version">
+        <id name="idOpcion" type="java.lang.Integer">
+            <column name="id_opcion" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreOpcion" type="string">
+            <column name="nombre_opcion" length="2" not-null="true" />
+        </property>
+        <set name="informacionPrincipalHasEspecificacionesVariases" table="informacion_principal_has_especificaciones_varias" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="opcion_id_opcion" not-null="true" />
+            </key>
+            <one-to-many class="Model.InformacionPrincipalHasEspecificacionesVarias" />
+        </set>
+    </class>
+</hibernate-mapping>
