@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-03-2015 a las 16:40:34
+-- Tiempo de generación: 01-03-2015 a las 20:50:40
 -- Versión del servidor: 5.5.42-1
 -- Versión de PHP: 5.6.5-2
 
@@ -1405,7 +1405,8 @@ CREATE TABLE IF NOT EXISTS `informacion_principal` (
   `tipo_propiedad_id_tipo_propiedad` int(11) NOT NULL,
   `usuario_id_usuario` int(11) NOT NULL,
   `fecha_registro_evento` datetime NOT NULL,
-  `estado_id_estado` int(11) NOT NULL
+  `estado_id_estado` int(11) NOT NULL,
+  `enlace_imagen` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
