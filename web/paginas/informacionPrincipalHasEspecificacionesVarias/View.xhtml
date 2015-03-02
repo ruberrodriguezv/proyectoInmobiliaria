@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasLabel_opcionIdOpcion}"/>
+                    <h:outputText value="#{informacionPrincipalHasEspecificacionesVariasController.selected.opcionIdOpcion}" title="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasTitle_opcionIdOpcion}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasLabel_especificacionesVarias}"/>
+                    <h:outputText value="#{informacionPrincipalHasEspecificacionesVariasController.selected.especificacionesVarias}" title="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasTitle_especificacionesVarias}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasLabel_informacionPrincipal}"/>
+                    <h:outputText value="#{informacionPrincipalHasEspecificacionesVariasController.selected.informacionPrincipal}" title="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasTitle_informacionPrincipal}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.destroyAndView}" value="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasEditLink}"/>
+                <br />
+                <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.prepareCreate}" value="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasCreateLink}" />
+                <br />
+                <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.prepareList}" value="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewInformacionPrincipalHasEspecificacionesVariasIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

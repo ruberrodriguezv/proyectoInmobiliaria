@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateInformacionPrincipalTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_idInformacionPrincipal}" for="idInformacionPrincipal" />
+                    <h:inputText id="idInformacionPrincipal" value="#{informacionPrincipalController.selected.idInformacionPrincipal}" title="#{bundle.CreateInformacionPrincipalTitle_idInformacionPrincipal}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_idInformacionPrincipal}"/>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_fechaRegistroEvento}" for="fechaRegistroEvento" />
+                    <h:inputText id="fechaRegistroEvento" value="#{informacionPrincipalController.selected.fechaRegistroEvento}" title="#{bundle.CreateInformacionPrincipalTitle_fechaRegistroEvento}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_fechaRegistroEvento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_ciudadConsecutivoCiudad}" for="ciudadConsecutivoCiudad" />
+                    <h:selectOneMenu id="ciudadConsecutivoCiudad" value="#{informacionPrincipalController.selected.ciudadConsecutivoCiudad}" title="#{bundle.CreateInformacionPrincipalTitle_ciudadConsecutivoCiudad}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_ciudadConsecutivoCiudad}">
+                        <f:selectItems value="#{ciudadController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_cocinaIdCocina}" for="cocinaIdCocina" />
+                    <h:selectOneMenu id="cocinaIdCocina" value="#{informacionPrincipalController.selected.cocinaIdCocina}" title="#{bundle.CreateInformacionPrincipalTitle_cocinaIdCocina}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_cocinaIdCocina}">
+                        <f:selectItems value="#{cocinaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_condicionIdCondicion}" for="condicionIdCondicion" />
+                    <h:selectOneMenu id="condicionIdCondicion" value="#{informacionPrincipalController.selected.condicionIdCondicion}" title="#{bundle.CreateInformacionPrincipalTitle_condicionIdCondicion}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_condicionIdCondicion}">
+                        <f:selectItems value="#{condicionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_departamentoIdDepartamento}" for="departamentoIdDepartamento" />
+                    <h:selectOneMenu id="departamentoIdDepartamento" value="#{informacionPrincipalController.selected.departamentoIdDepartamento}" title="#{bundle.CreateInformacionPrincipalTitle_departamentoIdDepartamento}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_departamentoIdDepartamento}">
+                        <f:selectItems value="#{departamentoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_tiempoConstruidoIdTiempoConstruido}" for="tiempoConstruidoIdTiempoConstruido" />
+                    <h:selectOneMenu id="tiempoConstruidoIdTiempoConstruido" value="#{informacionPrincipalController.selected.tiempoConstruidoIdTiempoConstruido}" title="#{bundle.CreateInformacionPrincipalTitle_tiempoConstruidoIdTiempoConstruido}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_tiempoConstruidoIdTiempoConstruido}">
+                        <f:selectItems value="#{tiempoConstruidoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_tipoOperacionIdTipoOperacion}" for="tipoOperacionIdTipoOperacion" />
+                    <h:selectOneMenu id="tipoOperacionIdTipoOperacion" value="#{informacionPrincipalController.selected.tipoOperacionIdTipoOperacion}" title="#{bundle.CreateInformacionPrincipalTitle_tipoOperacionIdTipoOperacion}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_tipoOperacionIdTipoOperacion}">
+                        <f:selectItems value="#{tipoOperacionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_estadoIdEstado}" for="estadoIdEstado" />
+                    <h:selectOneMenu id="estadoIdEstado" value="#{informacionPrincipalController.selected.estadoIdEstado}" title="#{bundle.CreateInformacionPrincipalTitle_estadoIdEstado}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_estadoIdEstado}">
+                        <f:selectItems value="#{estadoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_estratoIdEstrato}" for="estratoIdEstrato" />
+                    <h:selectOneMenu id="estratoIdEstrato" value="#{informacionPrincipalController.selected.estratoIdEstrato}" title="#{bundle.CreateInformacionPrincipalTitle_estratoIdEstrato}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_estratoIdEstrato}">
+                        <f:selectItems value="#{estratoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_zonaIdZona}" for="zonaIdZona" />
+                    <h:selectOneMenu id="zonaIdZona" value="#{informacionPrincipalController.selected.zonaIdZona}" title="#{bundle.CreateInformacionPrincipalTitle_zonaIdZona}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_zonaIdZona}">
+                        <f:selectItems value="#{zonaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_garajeIdGaraje}" for="garajeIdGaraje" />
+                    <h:selectOneMenu id="garajeIdGaraje" value="#{informacionPrincipalController.selected.garajeIdGaraje}" title="#{bundle.CreateInformacionPrincipalTitle_garajeIdGaraje}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_garajeIdGaraje}">
+                        <f:selectItems value="#{garajeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_rangoPreciosAjustadoIdRangoPreciosAjustado}" for="rangoPreciosAjustadoIdRangoPreciosAjustado" />
+                    <h:selectOneMenu id="rangoPreciosAjustadoIdRangoPreciosAjustado" value="#{informacionPrincipalController.selected.rangoPreciosAjustadoIdRangoPreciosAjustado}" title="#{bundle.CreateInformacionPrincipalTitle_rangoPreciosAjustadoIdRangoPreciosAjustado}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_rangoPreciosAjustadoIdRangoPreciosAjustado}">
+                        <f:selectItems value="#{rangoPreciosAjustadoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_tipoInmuebleIdTipoInmueble}" for="tipoInmuebleIdTipoInmueble" />
+                    <h:selectOneMenu id="tipoInmuebleIdTipoInmueble" value="#{informacionPrincipalController.selected.tipoInmuebleIdTipoInmueble}" title="#{bundle.CreateInformacionPrincipalTitle_tipoInmuebleIdTipoInmueble}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_tipoInmuebleIdTipoInmueble}">
+                        <f:selectItems value="#{tipoInmuebleController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_numeroAlcobasIdNumeroAlcobas}" for="numeroAlcobasIdNumeroAlcobas" />
+                    <h:selectOneMenu id="numeroAlcobasIdNumeroAlcobas" value="#{informacionPrincipalController.selected.numeroAlcobasIdNumeroAlcobas}" title="#{bundle.CreateInformacionPrincipalTitle_numeroAlcobasIdNumeroAlcobas}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_numeroAlcobasIdNumeroAlcobas}">
+                        <f:selectItems value="#{numeroAlcobasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_numeroBaniosIdNumeroBanios}" for="numeroBaniosIdNumeroBanios" />
+                    <h:selectOneMenu id="numeroBaniosIdNumeroBanios" value="#{informacionPrincipalController.selected.numeroBaniosIdNumeroBanios}" title="#{bundle.CreateInformacionPrincipalTitle_numeroBaniosIdNumeroBanios}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_numeroBaniosIdNumeroBanios}">
+                        <f:selectItems value="#{numeroBaniosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_numeroPlantasIdNumeroPlantas}" for="numeroPlantasIdNumeroPlantas" />
+                    <h:selectOneMenu id="numeroPlantasIdNumeroPlantas" value="#{informacionPrincipalController.selected.numeroPlantasIdNumeroPlantas}" title="#{bundle.CreateInformacionPrincipalTitle_numeroPlantasIdNumeroPlantas}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_numeroPlantasIdNumeroPlantas}">
+                        <f:selectItems value="#{numeroPlantasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_parqueaderoIdParqueadero}" for="parqueaderoIdParqueadero" />
+                    <h:selectOneMenu id="parqueaderoIdParqueadero" value="#{informacionPrincipalController.selected.parqueaderoIdParqueadero}" title="#{bundle.CreateInformacionPrincipalTitle_parqueaderoIdParqueadero}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_parqueaderoIdParqueadero}">
+                        <f:selectItems value="#{parqueaderoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_tipoPropiedadIdTipoPropiedad}" for="tipoPropiedadIdTipoPropiedad" />
+                    <h:selectOneMenu id="tipoPropiedadIdTipoPropiedad" value="#{informacionPrincipalController.selected.tipoPropiedadIdTipoPropiedad}" title="#{bundle.CreateInformacionPrincipalTitle_tipoPropiedadIdTipoPropiedad}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_tipoPropiedadIdTipoPropiedad}">
+                        <f:selectItems value="#{tipoPropiedadController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInformacionPrincipalLabel_usuarioIdUsuario}" for="usuarioIdUsuario" />
+                    <h:selectOneMenu id="usuarioIdUsuario" value="#{informacionPrincipalController.selected.usuarioIdUsuario}" title="#{bundle.CreateInformacionPrincipalTitle_usuarioIdUsuario}" required="true" requiredMessage="#{bundle.CreateInformacionPrincipalRequiredMessage_usuarioIdUsuario}">
+                        <f:selectItems value="#{usuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{informacionPrincipalController.create}" value="#{bundle.CreateInformacionPrincipalSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{informacionPrincipalController.prepareList}" value="#{bundle.CreateInformacionPrincipalShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateInformacionPrincipalIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

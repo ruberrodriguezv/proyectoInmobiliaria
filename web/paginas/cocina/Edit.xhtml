@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditCocinaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditCocinaLabel_idCocina}" for="idCocina" />
+                    <h:inputText id="idCocina" value="#{cocinaController.selected.idCocina}" title="#{bundle.EditCocinaTitle_idCocina}" required="true" requiredMessage="#{bundle.EditCocinaRequiredMessage_idCocina}"/>
+                    <h:outputLabel value="#{bundle.EditCocinaLabel_nombreCocina}" for="nombreCocina" />
+                    <h:inputText id="nombreCocina" value="#{cocinaController.selected.nombreCocina}" title="#{bundle.EditCocinaTitle_nombreCocina}" required="true" requiredMessage="#{bundle.EditCocinaRequiredMessage_nombreCocina}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{cocinaController.update}" value="#{bundle.EditCocinaSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditCocinaViewLink}"/>
+                <br />
+                <h:commandLink action="#{cocinaController.prepareList}" value="#{bundle.EditCocinaShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditCocinaIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

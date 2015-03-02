@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasLabel_opcionIdOpcion}" for="opcionIdOpcion" />
+                    <h:selectOneMenu id="opcionIdOpcion" value="#{informacionPrincipalHasEspecificacionesVariasController.selected.opcionIdOpcion}" title="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasTitle_opcionIdOpcion}" required="true" requiredMessage="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasRequiredMessage_opcionIdOpcion}">
+                        <f:selectItems value="#{opcionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasLabel_especificacionesVarias}" for="especificacionesVarias" />
+                    <h:selectOneMenu id="especificacionesVarias" value="#{informacionPrincipalHasEspecificacionesVariasController.selected.especificacionesVarias}" title="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasTitle_especificacionesVarias}" required="true" requiredMessage="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasRequiredMessage_especificacionesVarias}">
+                        <f:selectItems value="#{especificacionesVariasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasLabel_informacionPrincipal}" for="informacionPrincipal" />
+                    <h:selectOneMenu id="informacionPrincipal" value="#{informacionPrincipalHasEspecificacionesVariasController.selected.informacionPrincipal}" title="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasTitle_informacionPrincipal}" required="true" requiredMessage="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasRequiredMessage_informacionPrincipal}">
+                        <f:selectItems value="#{informacionPrincipalController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.update}" value="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasViewLink}"/>
+                <br />
+                <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.prepareList}" value="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditInformacionPrincipalHasEspecificacionesVariasIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

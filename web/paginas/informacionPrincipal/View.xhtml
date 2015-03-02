@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewInformacionPrincipalTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_idInformacionPrincipal}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.idInformacionPrincipal}" title="#{bundle.ViewInformacionPrincipalTitle_idInformacionPrincipal}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_fechaRegistroEvento}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.fechaRegistroEvento}" title="#{bundle.ViewInformacionPrincipalTitle_fechaRegistroEvento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_ciudadConsecutivoCiudad}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.ciudadConsecutivoCiudad}" title="#{bundle.ViewInformacionPrincipalTitle_ciudadConsecutivoCiudad}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_cocinaIdCocina}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.cocinaIdCocina}" title="#{bundle.ViewInformacionPrincipalTitle_cocinaIdCocina}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_condicionIdCondicion}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.condicionIdCondicion}" title="#{bundle.ViewInformacionPrincipalTitle_condicionIdCondicion}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_departamentoIdDepartamento}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.departamentoIdDepartamento}" title="#{bundle.ViewInformacionPrincipalTitle_departamentoIdDepartamento}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_tiempoConstruidoIdTiempoConstruido}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.tiempoConstruidoIdTiempoConstruido}" title="#{bundle.ViewInformacionPrincipalTitle_tiempoConstruidoIdTiempoConstruido}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_tipoOperacionIdTipoOperacion}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.tipoOperacionIdTipoOperacion}" title="#{bundle.ViewInformacionPrincipalTitle_tipoOperacionIdTipoOperacion}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_estadoIdEstado}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.estadoIdEstado}" title="#{bundle.ViewInformacionPrincipalTitle_estadoIdEstado}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_estratoIdEstrato}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.estratoIdEstrato}" title="#{bundle.ViewInformacionPrincipalTitle_estratoIdEstrato}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_zonaIdZona}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.zonaIdZona}" title="#{bundle.ViewInformacionPrincipalTitle_zonaIdZona}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_garajeIdGaraje}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.garajeIdGaraje}" title="#{bundle.ViewInformacionPrincipalTitle_garajeIdGaraje}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_rangoPreciosAjustadoIdRangoPreciosAjustado}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.rangoPreciosAjustadoIdRangoPreciosAjustado}" title="#{bundle.ViewInformacionPrincipalTitle_rangoPreciosAjustadoIdRangoPreciosAjustado}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_tipoInmuebleIdTipoInmueble}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.tipoInmuebleIdTipoInmueble}" title="#{bundle.ViewInformacionPrincipalTitle_tipoInmuebleIdTipoInmueble}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_numeroAlcobasIdNumeroAlcobas}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.numeroAlcobasIdNumeroAlcobas}" title="#{bundle.ViewInformacionPrincipalTitle_numeroAlcobasIdNumeroAlcobas}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_numeroBaniosIdNumeroBanios}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.numeroBaniosIdNumeroBanios}" title="#{bundle.ViewInformacionPrincipalTitle_numeroBaniosIdNumeroBanios}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_numeroPlantasIdNumeroPlantas}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.numeroPlantasIdNumeroPlantas}" title="#{bundle.ViewInformacionPrincipalTitle_numeroPlantasIdNumeroPlantas}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_parqueaderoIdParqueadero}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.parqueaderoIdParqueadero}" title="#{bundle.ViewInformacionPrincipalTitle_parqueaderoIdParqueadero}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_tipoPropiedadIdTipoPropiedad}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.tipoPropiedadIdTipoPropiedad}" title="#{bundle.ViewInformacionPrincipalTitle_tipoPropiedadIdTipoPropiedad}"/>
+                    <h:outputText value="#{bundle.ViewInformacionPrincipalLabel_usuarioIdUsuario}"/>
+                    <h:outputText value="#{informacionPrincipalController.selected.usuarioIdUsuario}" title="#{bundle.ViewInformacionPrincipalTitle_usuarioIdUsuario}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{informacionPrincipalController.destroyAndView}" value="#{bundle.ViewInformacionPrincipalDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewInformacionPrincipalEditLink}"/>
+                <br />
+                <h:commandLink action="#{informacionPrincipalController.prepareCreate}" value="#{bundle.ViewInformacionPrincipalCreateLink}" />
+                <br />
+                <h:commandLink action="#{informacionPrincipalController.prepareList}" value="#{bundle.ViewInformacionPrincipalShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewInformacionPrincipalIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

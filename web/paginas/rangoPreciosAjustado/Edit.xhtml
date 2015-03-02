@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRangoPreciosAjustadoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRangoPreciosAjustadoLabel_idRangoPreciosAjustado}" for="idRangoPreciosAjustado" />
+                    <h:inputText id="idRangoPreciosAjustado" value="#{rangoPreciosAjustadoController.selected.idRangoPreciosAjustado}" title="#{bundle.EditRangoPreciosAjustadoTitle_idRangoPreciosAjustado}" required="true" requiredMessage="#{bundle.EditRangoPreciosAjustadoRequiredMessage_idRangoPreciosAjustado}"/>
+                    <h:outputLabel value="#{bundle.EditRangoPreciosAjustadoLabel_tipoOperacionIdTipoOperacion}" for="tipoOperacionIdTipoOperacion" />
+                    <h:selectOneMenu id="tipoOperacionIdTipoOperacion" value="#{rangoPreciosAjustadoController.selected.tipoOperacionIdTipoOperacion}" title="#{bundle.EditRangoPreciosAjustadoTitle_tipoOperacionIdTipoOperacion}" required="true" requiredMessage="#{bundle.EditRangoPreciosAjustadoRequiredMessage_tipoOperacionIdTipoOperacion}">
+                        <f:selectItems value="#{tipoOperacionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRangoPreciosAjustadoLabel_rangoPreciosIdRangoPrecios}" for="rangoPreciosIdRangoPrecios" />
+                    <h:selectOneMenu id="rangoPreciosIdRangoPrecios" value="#{rangoPreciosAjustadoController.selected.rangoPreciosIdRangoPrecios}" title="#{bundle.EditRangoPreciosAjustadoTitle_rangoPreciosIdRangoPrecios}" required="true" requiredMessage="#{bundle.EditRangoPreciosAjustadoRequiredMessage_rangoPreciosIdRangoPrecios}">
+                        <f:selectItems value="#{rangoPreciosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{rangoPreciosAjustadoController.update}" value="#{bundle.EditRangoPreciosAjustadoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRangoPreciosAjustadoViewLink}"/>
+                <br />
+                <h:commandLink action="#{rangoPreciosAjustadoController.prepareList}" value="#{bundle.EditRangoPreciosAjustadoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditRangoPreciosAjustadoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

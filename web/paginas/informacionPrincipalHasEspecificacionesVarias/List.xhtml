@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListInformacionPrincipalHasEspecificacionesVariasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListInformacionPrincipalHasEspecificacionesVariasEmpty}" rendered="#{informacionPrincipalHasEspecificacionesVariasController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{informacionPrincipalHasEspecificacionesVariasController.items.rowCount > 0}">
+                    <h:outputText value="#{informacionPrincipalHasEspecificacionesVariasController.pagination.pageFirstItem + 1}..#{informacionPrincipalHasEspecificacionesVariasController.pagination.pageLastItem + 1}/#{informacionPrincipalHasEspecificacionesVariasController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.previous}" value="#{bundle.Previous} #{informacionPrincipalHasEspecificacionesVariasController.pagination.pageSize}" rendered="#{informacionPrincipalHasEspecificacionesVariasController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.next}" value="#{bundle.Next} #{informacionPrincipalHasEspecificacionesVariasController.pagination.pageSize}" rendered="#{informacionPrincipalHasEspecificacionesVariasController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{informacionPrincipalHasEspecificacionesVariasController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalHasEspecificacionesVariasTitle_opcionIdOpcion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.opcionIdOpcion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalHasEspecificacionesVariasTitle_especificacionesVarias}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.especificacionesVarias}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalHasEspecificacionesVariasTitle_informacionPrincipal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.informacionPrincipal}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.prepareView}" value="#{bundle.ListInformacionPrincipalHasEspecificacionesVariasViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.prepareEdit}" value="#{bundle.ListInformacionPrincipalHasEspecificacionesVariasEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.destroy}" value="#{bundle.ListInformacionPrincipalHasEspecificacionesVariasDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{informacionPrincipalHasEspecificacionesVariasController.prepareCreate}" value="#{bundle.ListInformacionPrincipalHasEspecificacionesVariasCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListInformacionPrincipalHasEspecificacionesVariasIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListInformacionPrincipalTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListInformacionPrincipalEmpty}" rendered="#{informacionPrincipalController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{informacionPrincipalController.items.rowCount > 0}">
+                    <h:outputText value="#{informacionPrincipalController.pagination.pageFirstItem + 1}..#{informacionPrincipalController.pagination.pageLastItem + 1}/#{informacionPrincipalController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{informacionPrincipalController.previous}" value="#{bundle.Previous} #{informacionPrincipalController.pagination.pageSize}" rendered="#{informacionPrincipalController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{informacionPrincipalController.next}" value="#{bundle.Next} #{informacionPrincipalController.pagination.pageSize}" rendered="#{informacionPrincipalController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{informacionPrincipalController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_idInformacionPrincipal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idInformacionPrincipal}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_fechaRegistroEvento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaRegistroEvento}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_ciudadConsecutivoCiudad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ciudadConsecutivoCiudad}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_cocinaIdCocina}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cocinaIdCocina}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_condicionIdCondicion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.condicionIdCondicion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_departamentoIdDepartamento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.departamentoIdDepartamento}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_tiempoConstruidoIdTiempoConstruido}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tiempoConstruidoIdTiempoConstruido}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_tipoOperacionIdTipoOperacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipoOperacionIdTipoOperacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_estadoIdEstado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estadoIdEstado}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_estratoIdEstrato}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estratoIdEstrato}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_zonaIdZona}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.zonaIdZona}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_garajeIdGaraje}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.garajeIdGaraje}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_rangoPreciosAjustadoIdRangoPreciosAjustado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.rangoPreciosAjustadoIdRangoPreciosAjustado}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_tipoInmuebleIdTipoInmueble}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipoInmuebleIdTipoInmueble}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_numeroAlcobasIdNumeroAlcobas}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numeroAlcobasIdNumeroAlcobas}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_numeroBaniosIdNumeroBanios}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numeroBaniosIdNumeroBanios}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_numeroPlantasIdNumeroPlantas}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numeroPlantasIdNumeroPlantas}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_parqueaderoIdParqueadero}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.parqueaderoIdParqueadero}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_tipoPropiedadIdTipoPropiedad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tipoPropiedadIdTipoPropiedad}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListInformacionPrincipalTitle_usuarioIdUsuario}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuarioIdUsuario}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{informacionPrincipalController.prepareView}" value="#{bundle.ListInformacionPrincipalViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{informacionPrincipalController.prepareEdit}" value="#{bundle.ListInformacionPrincipalEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{informacionPrincipalController.destroy}" value="#{bundle.ListInformacionPrincipalDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{informacionPrincipalController.prepareCreate}" value="#{bundle.ListInformacionPrincipalCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListInformacionPrincipalIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListIdentificacionInmobiliariaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListIdentificacionInmobiliariaEmpty}" rendered="#{identificacionInmobiliariaController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{identificacionInmobiliariaController.items.rowCount > 0}">
+                    <h:outputText value="#{identificacionInmobiliariaController.pagination.pageFirstItem + 1}..#{identificacionInmobiliariaController.pagination.pageLastItem + 1}/#{identificacionInmobiliariaController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{identificacionInmobiliariaController.previous}" value="#{bundle.Previous} #{identificacionInmobiliariaController.pagination.pageSize}" rendered="#{identificacionInmobiliariaController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{identificacionInmobiliariaController.next}" value="#{bundle.Next} #{identificacionInmobiliariaController.pagination.pageSize}" rendered="#{identificacionInmobiliariaController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{identificacionInmobiliariaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListIdentificacionInmobiliariaTitle_idIdentificacionInmobiliaria}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idIdentificacionInmobiliaria}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListIdentificacionInmobiliariaTitle_nombreInmobiliaria}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombreInmobiliaria}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{identificacionInmobiliariaController.prepareView}" value="#{bundle.ListIdentificacionInmobiliariaViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{identificacionInmobiliariaController.prepareEdit}" value="#{bundle.ListIdentificacionInmobiliariaEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{identificacionInmobiliariaController.destroy}" value="#{bundle.ListIdentificacionInmobiliariaDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{identificacionInmobiliariaController.prepareCreate}" value="#{bundle.ListIdentificacionInmobiliariaCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListIdentificacionInmobiliariaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
